@@ -13,8 +13,7 @@ class BaseMockGenerator(ABC):
 class TrafficMockGenerator(BaseMockGenerator):
     def __init__(self):
         self.traffic_labels = ["Low", "Medium", "High", "Jam"]
-        self.vehicle_labels = ["motorcycle", "car", "van", "bicycle"]
-
+      
     def _map_traffic(self, time_val):
         """
         Rules based on delivery_time (supports both datetime and string).
@@ -40,5 +39,4 @@ class TrafficMockGenerator(BaseMockGenerator):
 
     def generate(self, df: pd.DataFrame) -> pd.DataFrame:
         df["Traffic_Label"] = df["delivery_time"].apply(self._map_traffic)
-        df["Vehicle_Type"] = np.random.choice(self.vehicle_labels, size=len(df))
         return df

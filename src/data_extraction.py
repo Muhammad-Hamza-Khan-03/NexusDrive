@@ -29,6 +29,15 @@ class DataExtraction:
             city_name = delivery_file.split("/")[-1].replace("delivery_", "").replace(".csv", "")
             enriched_df["city"] = city_name
 
+            enriched_df["accept_time"] = pd.to_datetime(enriched_df["time"], format="%m-%d %H:%M:%S", errors="coerce")
+            enriched_df["pickup_time"] = enriched_df["time"]
+            enriched_df["delivery_time"] = pd.to_datetime(enriched_df["delivery_time"], errors="coerce")
+            
+            enriched_df["ETA_target"] = (
+                (enriched_df["delivery_time"] - enriched_df["pickup_time"])
+                .dt.total_seconds() / 60
+            )
+
             enriched_datasets.append(enriched_df)
             print(f"✅ Processed {city_name} dataset")
 

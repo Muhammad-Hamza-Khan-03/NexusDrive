@@ -38,8 +38,7 @@ class DataAligner(AbstractDataAlign):
             "drop_lat": df1["delivery_gps_lat"],
             "drop_lng": df1["delivery_gps_lng"],
             "weather": df1["Weather_Label"],
-            "traffic": df1["Traffic_Label"],
-            "vehicle": df1["Vehicle_Type"],
+            "traffic": df1["Traffic_Label"]
         })
 
         df1_reshaped["ETA_target"] = (
@@ -68,7 +67,6 @@ class DataAligner(AbstractDataAlign):
             "drop_lat": df2["Drop_Latitude"],
             "drop_lng": df2["Drop_Longitude"],
             "traffic": df2["Traffic"],
-            "vehicle": df2["Vehicle"],
         })
 
         df2_reshaped["ETA_target"] = (

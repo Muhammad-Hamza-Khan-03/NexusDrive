@@ -1,0 +1,13 @@
+{
+    "model_version": "1.0",
+    "training_date": "2025-09-08",
+    "regression_metrics": {
+        "MAE": 0.9405958944631465,
+        "RMSE": 1.3102255582632014,
+        "R2": 0.45136681263441225
+    },
+    "classification_metrics": {
+        "Accuracy": 0.7967688757006265,
+        "ROC_AUC": 0.9093409484178461
+    }
+}
