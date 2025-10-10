@@ -73,5 +73,5 @@ class DataExtraction:
     def run(self):
         """Full pipeline: process cities → align with amazon → return final dataset"""
         combined_enriched_df = self.process_city_datasets()
-        final_df = self.align_with_amazon(combined_enriched_df)
-        return final_df
+        # final_df = self.align_with_amazon(combined_enriched_df)
+        return combined_enriched_df
