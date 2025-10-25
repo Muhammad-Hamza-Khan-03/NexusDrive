@@ -1,0 +1,10 @@
+artifact_location: file:///home/hamza/Github-Main-Workspace/NexusDrive/mlruns/674573617295994476/models/m-b389434e90234222ad7d19b792434874/artifacts
+creation_timestamp: 1761198745332
+experiment_id: '674573617295994476'
+last_updated_timestamp: 1761198748498
+model_id: m-b389434e90234222ad7d19b792434874
+model_type: null
+name: best_regression_model
+source_run_id: 5e87aefca08d42d681f6fb5ea25d5158
+status: 2
+status_message: null

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/hamza/Github-Main-Workspace/NexusDrive/mlruns/674573617295994476/5e87aefca08d42d681f6fb5ea25d5158/artifacts
+end_time: 1761198751539
+entry_point_name: ''
+experiment_id: '674573617295994476'
+lifecycle_stage: active
+run_id: 5e87aefca08d42d681f6fb5ea25d5158
+run_name: Regression_and_Classification_Pipeline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761198744585
+status: 3
+tags: []
+user_id: hamza

@@ -1,0 +1,6 @@
+2025-10-23 10:52:23,987 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-23 10:52:24,075 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-23 10:52:24,162 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-23 10:52:24,269 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-23 10:52:24,591 | INFO | MLflow tracking started.
+2025-10-23 10:52:31,537 | INFO | Models and metrics logged to MLflow successfully.

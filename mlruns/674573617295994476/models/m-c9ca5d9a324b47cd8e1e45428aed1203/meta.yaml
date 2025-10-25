@@ -1,0 +1,10 @@
+artifact_location: file:///home/hamza/Github-Main-Workspace/NexusDrive/mlruns/674573617295994476/models/m-c9ca5d9a324b47cd8e1e45428aed1203/artifacts
+creation_timestamp: 1761198749411
+experiment_id: '674573617295994476'
+last_updated_timestamp: 1761198751536
+model_id: m-c9ca5d9a324b47cd8e1e45428aed1203
+model_type: null
+name: best_classification_model
+source_run_id: 5e87aefca08d42d681f6fb5ea25d5158
+status: 2
+status_message: null

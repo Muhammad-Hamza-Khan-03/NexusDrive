@@ -1,0 +1,22 @@
+artifact_path: file:///home/hamza/Github-Main-Workspace/NexusDrive/mlruns/674573617295994476/models/m-b389434e90234222ad7d19b792434874/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.1
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+mlflow_version: 3.5.1
+model_id: m-b389434e90234222ad7d19b792434874
+model_size_bytes: 290514
+model_uuid: m-b389434e90234222ad7d19b792434874
+prompts: null
+run_id: 5e87aefca08d42d681f6fb5ea25d5158
+utc_time_created: '2025-10-23 05:52:25.337503'
