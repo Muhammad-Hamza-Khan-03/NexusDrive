@@ -82,3 +82,5 @@ Shortwave Solar Radiation → high
 Is Day or Night → must be day
 
 test_inference_pipeline: python -m tests.inference_pipeline
+
+All tests: pytest -v
