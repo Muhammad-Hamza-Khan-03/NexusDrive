@@ -91,3 +91,5 @@ Entry file to run all : python train_model.py
 RUN FAST API server: uvicorn main:app --reload
 
 RUN ML FLOW: mlflow server --host 127.0.0.1 --port 8080
+
+pull docker image : hamzakhan03/nexusdrive_fastapi:latest
