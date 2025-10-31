@@ -35,3 +35,11 @@
 2025-10-30 12:14:27,781 | INFO | ✅ Regression pipeline saved at models/best_regression_pipeline.pkl
 2025-10-30 12:14:34,459 | INFO | ✅ Classification pipeline saved at models/best_classification_pipeline.pkl
 2025-10-30 12:14:34,461 | INFO | 🏁 Modeling Pipeline Completed Successfully.
+2025-10-30 20:57:18,575 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-30 20:57:18,674 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-30 20:57:18,769 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-30 20:57:18,897 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-30 20:57:18,961 | INFO | MLflow tracking started.
+2025-10-30 20:57:23,055 | INFO | ✅ Regression pipeline saved at models/best_regression_pipeline.pkl
+2025-10-30 20:57:26,138 | INFO | ✅ Classification pipeline saved at models/best_classification_pipeline.pkl
+2025-10-30 20:57:26,140 | INFO | 🏁 Modeling Pipeline Completed Successfully.

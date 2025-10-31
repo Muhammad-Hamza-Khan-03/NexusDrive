@@ -4,3 +4,4 @@
 mlruns/
 logs/
 *.log
+.env
