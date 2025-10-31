@@ -80,3 +80,16 @@ Cloud cover Total → < 30%
 Shortwave Solar Radiation → high
 
 Is Day or Night → must be day
+
+test_inference_pipeline: python -m tests.inference_pipeline
+
+All tests: pytest -v
+
+Entry file to run all : python train_model.py
+
+
+RUN FAST API server: uvicorn main:app --reload
+
+RUN ML FLOW: mlflow server --host 127.0.0.1 --port 8080
+
+pull docker image : hamzakhan03/nexusdrive_fastapi:latest

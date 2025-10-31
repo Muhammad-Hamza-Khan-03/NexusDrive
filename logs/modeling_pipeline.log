@@ -1,0 +1,45 @@
+2025-10-23 10:52:23,987 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-23 10:52:24,075 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-23 10:52:24,162 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-23 10:52:24,269 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-23 10:52:24,591 | INFO | MLflow tracking started.
+2025-10-23 10:52:31,537 | INFO | Models and metrics logged to MLflow successfully.
+2025-10-23 10:52:31,539 | INFO | ✅ Modeling Pipeline Completed Successfully.
+2025-10-30 11:13:28,932 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-30 11:13:29,024 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-30 11:13:29,107 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-30 11:13:29,227 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-30 11:13:29,576 | INFO | MLflow tracking started.
+2025-10-30 11:13:39,139 | INFO | Models and metrics logged to MLflow successfully.
+2025-10-30 11:13:39,140 | INFO | ✅ Modeling Pipeline Completed Successfully.
+2025-10-30 11:22:35,603 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-30 11:22:35,717 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-30 11:22:35,814 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-30 11:22:35,954 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-30 11:22:36,409 | INFO | MLflow tracking started.
+2025-10-30 11:22:45,673 | INFO | Models and metrics logged to MLflow successfully.
+2025-10-30 11:22:45,677 | INFO | ✅ Modeling Pipeline Completed Successfully.
+2025-10-30 11:56:27,135 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-30 11:56:27,249 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-30 11:56:27,354 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-30 11:56:27,499 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-30 11:56:27,902 | INFO | MLflow tracking started.
+2025-10-30 11:56:33,450 | INFO | ✅ Regression pipeline saved at models/best_regression_pipeline.pkl
+2025-10-30 11:56:37,029 | INFO | ✅ Classification pipeline saved at models/best_classification_pipeline.pkl
+2025-10-30 11:56:37,031 | INFO | 🏁 Modeling Pipeline Completed Successfully.
+2025-10-30 12:14:22,200 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-30 12:14:22,313 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-30 12:14:22,412 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-30 12:14:22,552 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-30 12:14:22,915 | INFO | MLflow tracking started.
+2025-10-30 12:14:27,781 | INFO | ✅ Regression pipeline saved at models/best_regression_pipeline.pkl
+2025-10-30 12:14:34,459 | INFO | ✅ Classification pipeline saved at models/best_classification_pipeline.pkl
+2025-10-30 12:14:34,461 | INFO | 🏁 Modeling Pipeline Completed Successfully.
+2025-10-30 20:57:18,575 | INFO | 🚀 Starting Modeling Pipeline...
+2025-10-30 20:57:18,674 | INFO | Feature preparation complete. Shape: (151647, 43)
+2025-10-30 20:57:18,769 | INFO | Data split complete. Training size: (121317, 41), Test size: (30330, 41)
+2025-10-30 20:57:18,897 | INFO | Preprocessing pipeline fitted successfully.
+2025-10-30 20:57:18,961 | INFO | MLflow tracking started.
+2025-10-30 20:57:23,055 | INFO | ✅ Regression pipeline saved at models/best_regression_pipeline.pkl
+2025-10-30 20:57:26,138 | INFO | ✅ Classification pipeline saved at models/best_classification_pipeline.pkl
+2025-10-30 20:57:26,140 | INFO | 🏁 Modeling Pipeline Completed Successfully.
