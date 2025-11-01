@@ -1,95 +1,287 @@
-# NexusDrive
- Real-Time Delivery ETA Prediction and Delay Risk Analytics
+# 🚚 NexusDrive
+### Real-Time Delivery ETA Prediction and Delay Risk Analytics
 
-Dataset links:
-LaDe: https://huggingface.co/datasets/Cainiao-AI/LaDe
-Amazon delievery: https://www.kaggle.com/datasets/sujalsuthar/amazon-delivery-dataset
+NexusDrive is a **machine learning–driven analytics system** that predicts **delivery Estimated Time of Arrival (ETA)** and classifies **delay risk** in real time.  
+It integrates weather, traffic, and logistics data, using an optimized ML pipeline served via a **FastAPI + Dockerized microservice**, with **Redis caching** for fast inference and **MLflow** for experiment tracking.
 
-API:
-openmateo historical api: https://open-meteo.com/en/docs/historical-weather-api 
+---
 
-Rules for weather labeling:
-1. Fog
+## 🧠 Project Overview
 
-Needs high humidity, low visibility, low wind.
+**Core Features:**
+- Predict real-time delivery ETA using regression models.
+- Classify delivery delay risk with logistic models.
+- Cache repeated inferences using Redis.
+- Track and compare model performance with MLflow.
+- Containerized for seamless deployment (FastAPI + Redis).
+- Includes full testing suite for inference and training validation.
 
-Variables:
+---
 
-Relative Humidity (2 m) → > 90%
+## 🧩 Datasets
 
-Cloud cover Low → > 80%
+| Dataset | Source | Description |
+|----------|---------|-------------|
+| **LaDe** | [Hugging Face - Cainiao-AI/LaDe](https://huggingface.co/datasets/Cainiao-AI/LaDe) | Real-world logistics delivery dataset. |
+| **Amazon Delivery Dataset** | [Kaggle](https://www.kaggle.com/datasets/sujalsuthar/amazon-delivery-dataset) | Delivery time and shipment delay data from Amazon. |
 
-Wind Speed (10 m) → < 2 m/s
+---
 
-Optional: Weather code if it has fog indicator.
+## 🌦️ External API Used
 
-2. Stormy
+**Historical Weather Data:**  
+[Open-Meteo API](https://open-meteo.com/en/docs/historical-weather-api)  
+Used to enrich dataset features with historical weather metrics.
 
-Strong winds + precipitation.
+---
 
-Variables:
+## ☁️ Weather Labeling Rules
 
-Wind Gusts (10 m) or Wind Speed (10 m) → > 12 m/s
+### 1. Fog
+| Variable | Threshold |
+|-----------|------------|
+| Relative Humidity (2m) | > 90% |
+| Cloud Cover Low | > 80% |
+| Wind Speed (10m) | < 2 m/s |
 
-Precipitation (rain + snow) → > 2 mm/h
+---
 
-Weather code if thunderstorm available.
+### 2. Stormy
+| Variable | Threshold |
+|-----------|------------|
+| Wind Gusts / Speed | > 12 m/s |
+| Precipitation | > 2 mm/h |
 
-3. Cloudy
+---
 
-High cloud cover, no heavy rain.
+### 3. Cloudy
+| Variable | Threshold |
+|-----------|------------|
+| Cloud Cover | > 70% |
+| Precipitation | < 1 mm/h |
 
-Variables:
+---
 
-Cloud cover Total → > 70%
+### 4. Sandstorms
+| Variable | Threshold |
+|-----------|------------|
+| Wind Speed | > 8–10 m/s |
+| Precipitation | < 0.1 mm/h |
+| Relative Humidity | < 40% |
 
-Precipitation → < 1 mm/h
+---
 
-4. Sandstorms
+### 5. Windy
+| Variable | Threshold |
+|-----------|------------|
+| Wind Speed | 6–12 m/s |
+| Precipitation | < 1 mm/h |
 
-Strong winds, dry conditions, low precipitation.
+---
 
-Variables:
+### 6. Sunny
+| Variable | Threshold |
+|-----------|------------|
+| Cloud Cover | < 30% |
+| Shortwave Radiation | High |
+| Is Day | True |
 
-Wind Speed (10 m) → > 8–10 m/s
+---
 
-Precipitation → < 0.1 mm/h
+## ⚙️ Installation & Setup
 
-Relative Humidity → < 40%
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/NexusDrive.git
+cd NexusDrive
+```
 
-(This will be region-specific: desert areas → higher chance.)
+### 2. Create Virtual Environment (optional)
 
-5. Windy
+```bash
+python -m venv venv
+source venv/bin/activate  # for Linux/Mac
+venv\Scripts\activate     # for Windows
+```
 
-Strong winds, but no storm-level precipitation.
+### 3. Install Requirements
 
-Variables:
+```bash
+pip install -r requirements.txt
+```
 
-Wind Speed (10 m) → 6–12 m/s
+---
 
-Precipitation → < 1 mm/h
+## 🧪 Testing
 
-6. Sunny
+### Run All Tests
 
-High solar radiation, low cloud cover.
+```bash
+pytest -v
+```
 
-Variables:
+### Test Only the Inference Pipeline
 
-Cloud cover Total → < 30%
+```bash
+python -m tests.inference_pipeline
+```
 
-Shortwave Solar Radiation → high
+---
 
-Is Day or Night → must be day
+## 🚀 Running the Application
 
-test_inference_pipeline: python -m tests.inference_pipeline
+### Run the FastAPI Server (Local)
 
-All tests: pytest -v
+```bash
+uvicorn main:app --reload
+```
 
-Entry file to run all : python train_model.py
+### Run MLflow for Experiment Tracking
 
+```bash
+mlflow server --host 127.0.0.1 --port 8080
+```
 
-RUN FAST API server: uvicorn main:app --reload
+---
 
-RUN ML FLOW: mlflow server --host 127.0.0.1 --port 8080
+## 🐳 Docker Deployment
 
-pull docker image : hamzakhan03/nexusdrive_fastapi:latest
+### 1. Build Docker Image
+
+```bash
+docker build -t nexusdrive_fastapi .
+```
+
+### 2. Run with Docker Compose
+
+```bash
+docker-compose up --build
+```
+
+### 3. Verify Running Containers
+
+```bash
+docker ps
+```
+
+Expected:
+
+```
+CONTAINER ID   IMAGE                COMMAND                  STATUS          PORTS
+2e17d678e179   nexusdrive_fastapi   "uvicorn main:app --…"   Up 8 minutes    0.0.0.0:8000->8000/tcp
+92aff2e9a8ab   redis:7              "docker-entrypoint.s…"   Up 11 minutes   0.0.0.0:6379->6379/tcp
+```
+
+### 4. Access the API
+
+```bash
+http://localhost:8000/docs
+```
+
+---
+
+## ☁️ Docker Hub Image
+
+You can directly pull the image:
+
+```bash
+docker pull hamzakhan03/nexusdrive_fastapi:latest
+```
+
+Run it:
+
+```bash
+docker run -d -p 8000:8000 hamzakhan03/nexusdrive_fastapi:latest
+```
+
+---
+
+## 🧰 Tech Stack
+
+| Component               | Technology                      |
+| ----------------------- | ------------------------------- |
+| **Backend API**         | FastAPI                         |
+| **Model Serving**       | Pickle + Scikit-learn pipelines |
+| **Caching Layer**       | Redis                           |
+| **Containerization**    | Docker, Docker Compose          |
+| **Experiment Tracking** | MLflow                          |
+| **Testing**             | Pytest                          |
+| **Dataset Handling**    | Pandas, NumPy                   |
+| **Logging**             | Python logging module           |
+
+---
+
+## 📂 Project Structure
+
+```
+NexusDrive/
+│
+├── main.py                     # FastAPI entrypoint
+├── train_model.py              # Model training script
+├── inference_pipeline.py       # Inference class
+├── tests/
+│   ├── inference_pipeline.py   # Unit tests
+│   └── ...
+├── models/
+│   ├── best_regression_pipeline.pkl
+│   ├── best_classification_pipeline.pkl
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+## 🧾 Example Endpoints
+
+| Method | Endpoint          | Description                      |
+| ------ | ----------------- | -------------------------------- |
+| `POST` | `/predict_eta`    | Predicts estimated delivery time |
+| `POST` | `/classify_delay` | Predicts delay risk category     |
+| `GET`  | `/health`         | Returns API health status        |
+
+---
+
+## 🧠 Model Lifecycle
+
+1. Data preprocessing → feature engineering (time, location, weather)
+2. Training using regression/classification pipelines
+3. Model evaluation & tracking with MLflow
+4. Pickle-based model export → `/models`
+5. Loaded by FastAPI inference service
+6. Caching frequent requests via Redis
+
+---
+
+## 🧮 Example Commands Summary
+
+| Task                   | Command                                             |
+| ---------------------- | --------------------------------------------------- |
+| Train model            | `python train_model.py`                             |
+| Run FastAPI            | `uvicorn main:app --reload`                         |
+| Run MLflow             | `mlflow server --host 127.0.0.1 --port 8080`        |
+| Run Tests              | `pytest -v`                                         |
+| Run via Docker Compose | `docker-compose up --build`                         |
+| Pull from Docker Hub   | `docker pull hamzakhan03/nexusdrive_fastapi:latest` |
+
+---
+
+## 🏁 Next Steps
+
+* [ ] Deploy containerized stack on Render or AWS ECS
+* [ ] Integrate live weather and GPS data streams
+* [ ] Add Grafana dashboard for real-time analytics
+* [ ] Enable model retraining API endpoint
+
+---
+
+## 👨‍💻 Author
+
+**Hamza Khan**  
+AI Engineer & Full-Stack Developer  
+📧 [Contact](mailto:your-email@example.com) | 🌐 [LinkedIn](https://linkedin.com/in/your-profile)
+
+---
+
+**⭐ Star this repository if you find it helpful!**
