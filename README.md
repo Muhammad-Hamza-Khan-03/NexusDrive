@@ -280,7 +280,7 @@ NexusDrive/
 
 **Hamza Khan**  
 AI Engineer & Full-Stack Developer  
-📧 [Contact](mailto:your-email@example.com) | 🌐 [LinkedIn](https://linkedin.com/in/your-profile)
+📧 [Contact](mailto:hamzakhan102003@gmail.com) | 🌐 [LinkedIn](https://www.linkedin.com/in/hamza-khan03)
 
 ---
 
