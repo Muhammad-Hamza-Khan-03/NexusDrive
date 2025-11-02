@@ -267,15 +267,6 @@ NexusDrive/
 
 ---
 
-## 🏁 Next Steps
-
-* [ ] Deploy containerized stack on Render or AWS ECS
-* [ ] Integrate live weather and GPS data streams
-* [ ] Add Grafana dashboard for real-time analytics
-* [ ] Enable model retraining API endpoint
-
----
-
 ## 👨‍💻 Author
 
 **Hamza Khan**  
