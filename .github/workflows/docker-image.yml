@@ -40,4 +40,4 @@ jobs:
 
       # Step 5: Verify the pushed image
       - name: Image digest
-        run: echo "✅ Image pushed successfully: ${{ steps.build.outputs.digest }}"
+        run: echo "[Success] Image pushed successfully - ${{steps.build.outputs.digest}}"
