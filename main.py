@@ -9,7 +9,7 @@ import redis.asyncio as redis
 import os
 from src.modeling.inference_pipeline import InferencePipeline
 from contextlib import asynccontextmanager
-
+from fastapi.middleware.cors import CORSMiddleware
 # =====================
 # Logging Setup
 # =====================
@@ -68,6 +68,22 @@ async def lifespan(app: FastAPI):
 # FastAPI App
 # =====================
 app = FastAPI(title="NexusDrive Inference API", version="2.0", lifespan=lifespan)
+
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Allow your frontend
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # =====================
 # Pydantic Schemas
