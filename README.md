@@ -1,5 +1,5 @@
 # 🚚 NexusDrive
-### Real-Time Delivery ETA Prediction and Delay Risk Analytics
+### Real-Time Delivery ETA Prediction and Delay Risk Analytics Model
 
 NexusDrive is a **machine learning–driven analytics system** that predicts **delivery Estimated Time of Arrival (ETA)** and classifies **delay risk** in real time.  
 It integrates weather, traffic, and logistics data, using an optimized ML pipeline served via a **FastAPI + Dockerized microservice**, with **Redis caching** for fast inference and **MLflow** for experiment tracking.
