@@ -6,6 +6,22 @@ It integrates weather, traffic, and logistics data, using an optimized ML pipeli
 
 ---
 
+## Recorded evaluation
+
+The repository's [model_metadata.json](./model_metadata.json) records training on **8 September 2025**:
+
+| Metric | Recorded value |
+|---|---:|
+| Regression MAE | 0.9406 |
+| Regression RMSE | 1.3102 |
+| Regression R² | 0.4514 |
+| Delay classification accuracy | 0.7968 |
+| Delay classification ROC AUC | 0.9093 |
+
+These are saved experiment results, not a new benchmark or production guarantee. The metadata does not record error units, the evaluation split, or a baseline. Read the training pipeline alongside the artifact before interpreting the results.
+
+[Portfolio case study](https://hamza-khan-portfolio.hamzakhan102003.chatgpt.site/projects/nexusdrive/) · [LinkedIn](https://www.linkedin.com/in/muhammadhamzakhan/)
+
 ## 🧠 Project Overview
 
 **Core Features:**
@@ -92,7 +108,7 @@ Used to enrich dataset features with historical weather metrics.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/NexusDrive.git
+git clone https://github.com/Muhammad-Hamza-Khan-03/NexusDrive.git
 cd NexusDrive
 ```
 
@@ -271,7 +287,7 @@ NexusDrive/
 
 **Hamza Khan**  
 AI Engineer & Full-Stack Developer  
-📧 [Contact](mailto:hamzakhan102003@gmail.com) | 🌐 [LinkedIn](https://www.linkedin.com/in/hamza-khan03)
+📧 [Contact](mailto:hamzakhan102003@gmail.com) | 🌐 [LinkedIn](https://www.linkedin.com/in/muhammadhamzakhan/)
 
 ---
 
